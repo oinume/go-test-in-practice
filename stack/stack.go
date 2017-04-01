@@ -31,6 +31,7 @@ func (s *IntStack) Pop() (int, error) {
 	}
 	v := s.top.value
 	s.top = s.top.next
+	s.size--
 	return v, nil
 }
 

@@ -22,6 +22,7 @@ func (s *IntStack) Push(value int) {
 		value: value,
 		next:  t,
 	}
+	s.size++
 }
 
 func (s *IntStack) Pop() (int, error) {

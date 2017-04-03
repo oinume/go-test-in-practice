@@ -16,6 +16,7 @@ func NewIntStack() *IntStack {
 	return &IntStack{}
 }
 
+// Push `value` to the stack
 func (s *IntStack) Push(value int) {
 	t := s.head
 	s.head = &intElement{
@@ -25,6 +26,7 @@ func (s *IntStack) Push(value int) {
 	s.size++
 }
 
+// Pop last value which was pushed last
 func (s *IntStack) Pop() (int, error) {
 	if s.Size() == 0 {
 		return 0, fmt.Errorf("Stack is empty.")
@@ -35,6 +37,7 @@ func (s *IntStack) Pop() (int, error) {
 	return v, nil
 }
 
+// Return current stack size
 func (s *IntStack) Size() int {
 	return s.size
 }

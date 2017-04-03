@@ -8,7 +8,7 @@ type intElement struct {
 }
 
 type IntStack struct {
-	top  *intElement
+	head *intElement
 	size int
 }
 
@@ -17,8 +17,8 @@ func NewIntStack() *IntStack {
 }
 
 func (s *IntStack) Push(value int) {
-	t := s.top
-	s.top = &intElement{
+	t := s.head
+	s.head = &intElement{
 		value: value,
 		next:  t,
 	}
@@ -29,8 +29,8 @@ func (s *IntStack) Pop() (int, error) {
 	if s.Size() == 0 {
 		return 0, fmt.Errorf("Stack is empty.")
 	}
-	v := s.top.value
-	s.top = s.top.next
+	v := s.head.value
+	s.head = s.head.next
 	s.size--
 	return v, nil
 }

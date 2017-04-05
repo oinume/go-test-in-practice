@@ -18,10 +18,10 @@ func NewIntStack() *IntStack {
 
 // Push `value` to the stack
 func (s *IntStack) Push(value int) {
-	t := s.head
+	head := s.head
 	s.head = &intElement{
 		value: value,
-		next:  t,
+		next:  head,
 	}
 	s.size++
 }

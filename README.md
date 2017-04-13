@@ -1,1 +1,1 @@
-# pragmatic-go-test
+# go test in practice
